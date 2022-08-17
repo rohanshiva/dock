@@ -85,7 +85,8 @@ function Dock() {
         }
     }
 
-    const handleDelete = async (key: string) => {
+    const handleDelete = async (event: any, key: string) => {
+        event.stopPropagation();
         const loadingToast = toast.loading("Sending ...", LOADING as any);
         try {
             await PostsService.delete(key)
@@ -127,7 +128,7 @@ function Dock() {
                                     {parseTimestamp(_post.key)}
                                 </div>
                                 <div className="toolbar-actions">
-                                    <button className="icon-button" onClick={() => handleDelete(_post.key)}>
+                                    <button className="icon-button" onClick={(event) => handleDelete(event, _post.key)}>
                                         <Trash size={16} />
                                     </button>
                                 </div>
