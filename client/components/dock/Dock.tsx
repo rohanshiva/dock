@@ -137,7 +137,7 @@ function Dock() {
                 }) :
                     (
                         <div>
-                            No post's yet, add some 🦍
+                            No post's yet, add some
                         </div>
                     )}
             </div>
