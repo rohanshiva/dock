@@ -1,0 +1,9 @@
+v: 1
+micros:
+    - name: app
+      src: client
+      engine: next
+      primary: true
+    - name: server
+      src: server
+      engine: python3.9
