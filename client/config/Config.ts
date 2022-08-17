@@ -1,5 +1,5 @@
 const config = {
-    base: (typeof window !== "undefined") ? `https://${window.location.hostname}:8000/api` : `http://localhost:8000/api`,
+    base: (typeof window !== "undefined") ? `https://server_${window.location.hostname}/api` : `http://localhost:8000/api`,
     add: "add",
     fetch: "fetch",
     download: "download",
