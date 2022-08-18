@@ -11,6 +11,6 @@ micros:
       src: feed-server
       engine: custom
       commands:
-        - cd cmd && go build main.go
+        - go build cmd/main.go
       artefact: main
       run: ./main
