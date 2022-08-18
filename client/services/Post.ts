@@ -22,7 +22,7 @@ class PostsService {
     static async delete(key: string): Promise<any> {
         const url = `${config.base}/${config.delete}/${key}`
         try {
-            const response = await fetch(url)
+            const response = await fetch(url, {credentials: "include"})
             if (response.status === 200) {
                 return key
             }

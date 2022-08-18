@@ -1,0 +1,17 @@
+v: 1
+micros:
+    - name: app
+      src: client
+      engine: next
+      primary: true
+    - name: server
+      src: server
+      engine: python3.9
+    - name: feeds
+      src: feed-server
+      engine: custom
+      commands:
+        - go get
+        - cd cmd && go build main.go
+      artefact: main
+      run: ./main
