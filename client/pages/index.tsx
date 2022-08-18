@@ -1,9 +1,14 @@
 import type { NextPage } from 'next'
+import { useRouter } from 'next/router';
+import {Rss} from "react-feather"
 import Dock from "../components/dock";
 import {getColor, generateColors, generateRadialGradients} from "../services/Color";
 
 const Home: NextPage = () => {
+  const router = useRouter();
   
+  const host = typeof window !== 'undefined' && window.location.host ? window.location.host : '';
+
   // base color
   const color = getColor(); 
   
@@ -20,6 +25,9 @@ const Home: NextPage = () => {
       <h1>
         sponge
       </h1>
+      <a href={`https://feeds_${host}`}>
+        <Rss size={16} />
+      </a>
     </div>
     <Dock />
     {/* <Page post={{content: "# hello \nthis is nice \n```def python(:'dhd'):```", is_file: false, key: "167328949327"} as IPost}/> */}
